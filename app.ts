@@ -73,7 +73,7 @@ function main() {
                     throw new Error('need host id');
                 }
                 if (host.guestDescription) {
-                    throw new Error(`host ${id} already in a call`);
+                    throw new Error(`host already in a call:  ${id}`);
                 }
 
                 response.statusCode = 200;
@@ -92,7 +92,7 @@ function main() {
                 }
                 const host = hosts[hostId];
                 if (!host) {
-                    throw new Error('host not found');
+                    throw new Error(`host not found: ${hostId}`);
                 }
 
                 host.guestDescription = guestDescription;
@@ -109,7 +109,7 @@ function main() {
 
                 const host = hosts[hostId];
                 if (!host) {
-                    throw new Error('host not found');
+                    throw new Error(`host not found: ${hostId}`);
                 }
 
                 response.statusCode = 200;
